@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spa & Recovery | SUN_GYM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "gym-black": "#0a0a0a",
+              "gym-charcoal": "#1a1a1a",
+              "gym-neon": "#ccff00",
+            },
+            fontFamily: { sans: ["Inter", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glass {
+        background: rgba(10, 10, 10, 0.7);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .neon-glow {
+        box-shadow: 0 0 15px rgba(204, 255, 0, 0.4);
+      }
+      .neon-glow:hover {
+        box-shadow: 0 0 25px rgba(204, 255, 0, 0.7);
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .animate-marquee {
+        display: flex;
+        animation: marquee 25s linear infinite;
+      }
+    </style>
+  </head>
+  <body class="bg-gym-black text-white font-sans antialiased">
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6">
+      <div class="container mx-auto px-6 flex justify-between items-center">
+        <a
+          href="index.html#home"
+          class="text-2xl font-black tracking-tighter italic"
+        >
+          SUN<span class="text-gym-neon">_GYM</span>
+        </a>
+        <div
+          class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest"
+        >
+          <a href="index.html#home" class="hover:text-gym-neon transition"
+            >Home</a
+          >
+          <a href="index.html#features" class="hover:text-gym-neon transition"
+            >Classes</a
+          >
+          <a
+            href="personal-training.html"
+            class="hover:text-gym-neon transition"
+            >Personal Training</a
+          >
+          <a href="#" class="text-gym-neon transition">Spa</a>
+          <a href="index.html#pricing" class="hover:text-gym-neon transition"
+            >Pricing</a
+          >
+        </div>
+        <a
+          href="#book-spa"
+          class="bg-gym-neon text-black px-6 py-2 rounded-full font-extrabold text-sm neon-glow transition-all"
+          >BOOK SESSION</a
+        >
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="relative h-[70vh] flex items-center justify-center overflow-hidden"
+    >
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=1920"
+          alt="Spa Background"
+          class="w-full h-full object-cover opacity-40"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-transparent to-gym-black"
+        ></div>
+      </div>
+      <div class="container mx-auto px-6 relative z-10 text-center">
+        <h1 class="text-6xl md:text-8xl font-black uppercase mb-6 reveal">
+          REJUVENATE <br /><span class="text-gym-neon">YOUR SOUL</span>
+        </h1>
+        <p class="text-gray-400 max-w-2xl mx-auto mb-10 text-lg reveal">
+          Premium recovery treatments designed to heal your body and calm your
+          mind after every intense workout.
+        </p>
+      </div>
+    </section>
+
+    <!-- Moving Advertisement -->
+    <div
+      class="bg-gym-neon py-2 overflow-hidden border-y border-white/10 relative z-20"
+    >
+      <div
+        class="animate-marquee whitespace-nowrap flex text-black font-bold uppercase tracking-wide text-xs md:text-sm"
+      >
+        <span class="px-8"
+          >Relax • Recover • Rejuvenate • Deep Tissue Massage • Steam Bath •
+          Himalayan Salt Sauna • Hydrotherapy •</span
+        >
+        <span class="px-8"
+          >Relax • Recover • Rejuvenate • Deep Tissue Massage • Steam Bath •
+          Himalayan Salt Sauna • Hydrotherapy •</span
+        >
+      </div>
+    </div>
+
+    <!-- Spa Details Section -->
+    <section class="py-24 bg-gym-black">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div
+            class="reveal p-8 bg-gym-charcoal rounded-3xl border border-white/5 hover:border-gym-neon/30 transition-all"
+          >
+            <div class="text-gym-neon mb-6">
+              <svg
+                class="w-12 h-12"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 uppercase">Massage Therapy</h3>
+            <p class="text-gray-400 leading-relaxed">
+              Our licensed therapists offer Deep Tissue and Swedish massages
+              specifically tailored for athletes to reduce muscle soreness.
+            </p>
+          </div>
+          <div
+            class="reveal p-8 bg-gym-charcoal rounded-3xl border border-white/5 hover:border-gym-neon/30 transition-all"
+          >
+            <div class="text-gym-neon mb-6">
+              <svg
+                class="w-12 h-12"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.99 7.99 0 0120 13a7.98 7.98 0 01-2.343 5.657z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 uppercase">Steam & Sauna</h3>
+            <p class="text-gray-400 leading-relaxed">
+              Detoxify your body in our premium Himalayan Salt Sauna or
+              experience the skin-rejuvenating benefits of our Steam Rooms.
+            </p>
+          </div>
+          <div
+            class="reveal p-8 bg-gym-charcoal rounded-3xl border border-white/5 hover:border-gym-neon/30 transition-all"
+          >
+            <div class="text-gym-neon mb-6">
+              <svg
+                class="w-12 h-12"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 uppercase">Hydrotherapy</h3>
+            <p class="text-gray-400 leading-relaxed">
+              Temperature-controlled jets provide a therapeutic experience to
+              improve blood circulation and accelerate muscle recovery.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-24 bg-gym-charcoal">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-black mb-16 reveal uppercase">Spa Packages</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="reveal p-10 bg-gym-black rounded-3xl border border-white/10"
+          >
+            <h4
+              class="text-xl font-bold mb-4 uppercase text-gray-500 tracking-widest"
+            >
+              Relax
+            </h4>
+            <div class="text-5xl font-black mb-6">
+              $40<span class="text-lg font-normal">/session</span>
+            </div>
+            <ul class="space-y-4 text-gray-400 mb-10">
+              <li>45 min Swedish Massage</li>
+              <li>Access to Steam Room</li>
+              <li>Organic Herbal Tea</li>
+            </ul>
+            <button
+              class="w-full py-4 border border-white/20 hover:border-gym-neon hover:text-gym-neon transition rounded-xl font-bold uppercase tracking-widest"
+            >
+              Select
+            </button>
+          </div>
+          <div
+            class="reveal p-10 bg-gym-neon text-black rounded-3xl scale-105 shadow-2xl relative z-10"
+          >
+            <h4 class="text-xl font-bold mb-4 uppercase tracking-widest">
+              Recovery
+            </h4>
+            <div class="text-5xl font-black mb-6">
+              $75<span class="text-lg font-normal">/session</span>
+            </div>
+            <ul class="space-y-4 font-semibold mb-10">
+              <li>60 min Deep Tissue Massage</li>
+              <li>Full Sauna & Hydro Access</li>
+              <li>Personalized Aromatherapy</li>
+            </ul>
+            <button
+              class="w-full py-4 bg-black text-white rounded-xl font-bold hover:opacity-90 transition uppercase tracking-widest"
+            >
+              Select
+            </button>
+          </div>
+          <div
+            class="reveal p-10 bg-gym-black rounded-3xl border border-white/10"
+          >
+            <h4
+              class="text-xl font-bold mb-4 uppercase text-gray-500 tracking-widest"
+            >
+              Ultimate
+            </h4>
+            <div class="text-5xl font-black mb-6">
+              $120<span class="text-lg font-normal">/session</span>
+            </div>
+            <ul class="space-y-4 text-gray-400 mb-10">
+              <li>90 min Luxury Treatment</li>
+              <li>Private Himalayan Salt Suite</li>
+              <li>VIP Lounge Access</li>
+            </ul>
+            <button
+              class="w-full py-4 border border-white/20 hover:border-gym-neon hover:text-gym-neon transition rounded-xl font-bold uppercase tracking-widest"
+            >
+              Select
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="book-spa" class="py-24 bg-gym-black">
+      <div class="container mx-auto px-6">
+        <div
+          class="max-w-3xl mx-auto bg-gym-charcoal p-10 md:p-16 rounded-[40px] reveal border border-white/5"
+        >
+          <div class="text-center mb-10">
+            <h2 class="text-4xl font-black uppercase mb-4 tracking-tighter">
+              Book Your <span class="text-gym-neon">Experience</span>
+            </h2>
+            <p class="text-gray-400">Step into a world of tranquility.</p>
+          </div>
+          <form id="booking-form" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <input
+                type="text"
+                id="name"
+                required
+                class="w-full bg-gym-black border border-white/10 p-4 rounded-xl focus:border-gym-neon outline-none transition"
+                placeholder="Full Name"
+              />
+              <input
+                type="email"
+                id="email"
+                required
+                class="w-full bg-gym-black border border-white/10 p-4 rounded-xl focus:border-gym-neon outline-none transition"
+                placeholder="Email Address"
+              />
+            </div>
+            <select
+              id="trainer"
+              required
+              class="w-full bg-gym-black border border-white/10 p-4 rounded-xl focus:border-gym-neon outline-none transition appearance-none"
+            >
+              <option value="" disabled selected>Select Treatment</option>
+              <option value="deep-tissue">Deep Tissue Massage</option>
+              <option value="sauna">Himalayan Salt Sauna</option>
+              <option value="hydro">Hydrotherapy Pool</option>
+            </select>
+            <button
+              type="submit"
+              class="w-full bg-gym-neon text-black font-black py-5 rounded-2xl neon-glow transition-all uppercase tracking-widest text-lg"
+            >
+              Send Request
+            </button>
+          </form>
+          <div id="success-msg" class="hidden text-center py-10">
+            <h3 class="text-2xl font-bold text-gym-neon mb-2">Request Sent!</h3>
+            <p class="text-gray-400">
+              Our wellness concierge will contact you shortly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="py-12 border-t border-white/5 bg-gym-black text-center md:text-left"
+    >
+      <div
+        class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8"
+      >
+        <div>
+          <a href="index.html#home" class="text-2xl font-black italic block"
+            >SUN<span class="text-gym-neon">_GYM</span></a
+          >
+          <p class="text-gray-500 text-sm italic">
+            Developed by Tanzim Ahmed Utsho
+          </p>
+        </div>
+        <div class="flex gap-8 text-gray-400 font-bold text-sm uppercase">
+          <a href="#" class="hover:text-gym-neon transition">Instagram</a>
+          <a href="#" class="hover:text-gym-neon transition">Facebook</a>
+          <a href="#" class="hover:text-gym-neon transition">Twitter</a>
+        </div>
+        <div class="text-gray-600 text-xs">
+          &copy; 2023 SUN_GYM. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
