@@ -626,6 +626,33 @@
         { threshold: 0.1 },
       );
       revealElements.forEach((el) => revealObserver.observe(el));
+
+      // Highlight current day in schedule
+      const today = new Date().getDay(); // 0 (Sun) to 6 (Sat)
+      if (today >= 1 && today <= 6) {
+        // Our table covers Mon (1) to Sat (6)
+        const table = document.querySelector("table");
+        const headers = table.querySelectorAll("thead th");
+        const rows = table.querySelectorAll("tbody tr");
+
+        // Highlight the header
+        if (headers[today]) {
+          headers[today].classList.add("text-gym-neon", "bg-gym-neon/10");
+          headers[today].classList.remove("text-white");
+        }
+
+        // Highlight the column cells
+        rows.forEach((row) => {
+          const cells = row.querySelectorAll("td");
+          if (cells[today]) {
+            cells[today].classList.add(
+              "bg-gym-neon/5",
+              "border-x",
+              "border-gym-neon/10",
+            );
+          }
+        });
+      }
     </script>
   </body>
 </html>
