@@ -744,19 +744,49 @@
           </div>
           <div
             id="bmi-result-card"
-            class="flex-1 bg-gym-black p-8 rounded-2xl border border-gym-neon/20 hidden"
+            class="flex-1 bg-gym-black p-8 rounded-2xl border border-gym-neon/20 hidden space-y-6"
           >
-            <p class="text-sm font-bold text-gray-500 uppercase mb-2">
-              Your Result
-            </p>
-            <div id="bmi-val" class="text-6xl font-black text-gym-neon mb-2">
-              --
+            <div>
+              <p class="text-sm font-bold text-gray-500 uppercase mb-2">
+                Your Result
+              </p>
+              <div id="bmi-val" class="text-6xl font-black text-gym-neon mb-2">
+                --
+              </div>
+              <div
+                id="bmi-status"
+                class="text-xl font-bold uppercase tracking-widest"
+              >
+                --
+              </div>
             </div>
-            <div
-              id="bmi-status"
-              class="text-xl font-bold uppercase tracking-widest"
-            >
-              --
+            <div class="pt-6 border-t border-white/10 space-y-4 text-left">
+              <div>
+                <p
+                  class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1"
+                >
+                  Healthy Weight Range
+                </p>
+                <p
+                  id="weight-range"
+                  class="text-white font-bold italic tracking-wide"
+                >
+                  --
+                </p>
+              </div>
+              <div>
+                <p
+                  class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1"
+                >
+                  Recommended Program
+                </p>
+                <p
+                  id="bmi-plan"
+                  class="text-gym-neon font-black uppercase tracking-tighter"
+                >
+                  --
+                </p>
+              </div>
             </div>
           </div>
         </div>

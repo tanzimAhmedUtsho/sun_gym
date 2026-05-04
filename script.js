@@ -59,24 +59,42 @@ if (calcBtn) {
   const resultCard = document.getElementById("bmi-result-card");
   const bmiValDisplay = document.getElementById("bmi-val");
   const bmiStatusDisplay = document.getElementById("bmi-status");
+  const weightRangeDisplay = document.getElementById("weight-range");
+  const bmiPlanDisplay = document.getElementById("bmi-plan");
 
   calcBtn.addEventListener("click", () => {
     const h = parseFloat(document.getElementById("height").value);
     const w = parseFloat(document.getElementById("weight").value);
 
     if (h > 0 && w > 0) {
-      const bmi = (w / ((h / 100) * (h / 100))).toFixed(1);
+      const hM = h / 100;
+      const bmi = (w / (hM * hM)).toFixed(1);
 
       resultCard.classList.remove("hidden");
       bmiValDisplay.innerText = bmi;
 
       let status = "";
-      if (bmi < 18.5) status = "Underweight";
-      else if (bmi < 24.9) status = "Healthy Weight";
-      else if (bmi < 29.9) status = "Overweight";
-      else status = "Obese";
+      let plan = "";
+      if (bmi < 18.5) {
+        status = "Underweight";
+        plan = "Strength Training (Mass Gainer)";
+      } else if (bmi < 24.9) {
+        status = "Healthy Weight";
+        plan = "Standard Maintenance Plan";
+      } else if (bmi < 29.9) {
+        status = "Overweight";
+        plan = "HIIT & Cardio (Fat Burn)";
+      } else {
+        status = "Obese";
+        plan = "Intensive 1-on-1 Coaching";
+      }
 
       bmiStatusDisplay.innerText = status;
+      bmiPlanDisplay.innerText = plan;
+
+      const minWeight = (18.5 * hM * hM).toFixed(1);
+      const maxWeight = (24.9 * hM * hM).toFixed(1);
+      weightRangeDisplay.innerText = `${minWeight}kg - ${maxWeight}kg`;
 
       if (window.innerWidth < 768) {
         resultCard.scrollIntoView({ behavior: "smooth", block: "center" });
