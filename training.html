@@ -264,6 +264,40 @@
           <p class="text-gray-400">Plan your week around your evolution.</p>
         </div>
 
+        <!-- Filters -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12 reveal">
+          <button
+            data-filter="all"
+            class="filter-btn bg-gym-neon text-black px-6 py-2 rounded-full font-bold uppercase text-xs tracking-widest transition-all"
+          >
+            All
+          </button>
+          <button
+            data-filter="strength"
+            class="filter-btn border border-white/20 text-white hover:border-gym-neon hover:text-gym-neon px-6 py-2 rounded-full font-bold uppercase text-xs tracking-widest transition-all"
+          >
+            Strength
+          </button>
+          <button
+            data-filter="hiit"
+            class="filter-btn border border-white/20 text-white hover:border-gym-neon hover:text-gym-neon px-6 py-2 rounded-full font-bold uppercase text-xs tracking-widest transition-all"
+          >
+            HIIT
+          </button>
+          <button
+            data-filter="yoga"
+            class="filter-btn border border-white/20 text-white hover:border-gym-neon hover:text-gym-neon px-6 py-2 rounded-full font-bold uppercase text-xs tracking-widest transition-all"
+          >
+            Yoga
+          </button>
+          <button
+            data-filter="recovery"
+            class="filter-btn border border-white/20 text-white hover:border-gym-neon hover:text-gym-neon px-6 py-2 rounded-full font-bold uppercase text-xs tracking-widest transition-all"
+          >
+            Recovery
+          </button>
+        </div>
+
         <div class="overflow-x-auto reveal">
           <table class="w-full text-left border-collapse min-w-[800px]">
             <thead>
@@ -310,7 +344,7 @@
                 class="border-b border-white/5 hover:bg-white/5 transition-colors"
               >
                 <td class="py-8 px-4 font-bold text-white">06:00 AM</td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="strength">
                   <span class="block text-white font-bold">Strength</span> Coach
                   Utsho
                   <a
@@ -319,7 +353,7 @@
                     >Book Class</a
                   >
                 </td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="hiit">
                   <span class="block text-white font-bold">HIIT</span> Coach
                   Sarah
                   <a
@@ -328,7 +362,7 @@
                     >Book Class</a
                   >
                 </td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="strength">
                   <span class="block text-white font-bold">Strength</span> Coach
                   Utsho
                   <a
@@ -337,7 +371,7 @@
                     >Book Class</a
                   >
                 </td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="hiit">
                   <span class="block text-white font-bold">HIIT</span> Coach
                   Sarah
                   <a
@@ -346,7 +380,7 @@
                     >Book Class</a
                   >
                 </td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="strength">
                   <span class="block text-white font-bold">Strength</span> Coach
                   Utsho
                   <a
@@ -355,7 +389,7 @@
                     >Book Class</a
                   >
                 </td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="yoga">
                   <span class="block text-white font-bold">Yoga</span> Coach
                   Mike
                   <a
@@ -369,7 +403,7 @@
                 class="border-b border-white/5 hover:bg-white/5 transition-colors"
               >
                 <td class="py-8 px-4 font-bold text-white">08:00 AM</td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="yoga">
                   <span class="block text-white font-bold">Yoga</span> Coach
                   Mike
                   <a
@@ -378,7 +412,7 @@
                     >Book Class</a
                   >
                 </td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="strength">
                   <span class="block text-white font-bold">Strength</span> Coach
                   Alex
                   <a
@@ -387,7 +421,7 @@
                     >Book Class</a
                   >
                 </td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="yoga">
                   <span class="block text-white font-bold">Yoga</span> Coach
                   Mike
                   <a
@@ -396,7 +430,7 @@
                     >Book Class</a
                   >
                 </td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="strength">
                   <span class="block text-white font-bold">Strength</span> Coach
                   Alex
                   <a
@@ -405,7 +439,7 @@
                     >Book Class</a
                   >
                 </td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="yoga">
                   <span class="block text-white font-bold">Yoga</span> Coach
                   Mike
                   <a
@@ -414,7 +448,7 @@
                     >Book Class</a
                   >
                 </td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="hiit">
                   <span class="block text-white font-bold">HIIT</span> Coach
                   Sarah
                   <a
@@ -428,7 +462,7 @@
                 class="border-b border-white/5 hover:bg-white/5 transition-colors"
               >
                 <td class="py-8 px-4 font-bold text-white">05:00 PM</td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="hiit">
                   <span class="block text-white font-bold">HIIT</span> Coach
                   Sarah
                   <a
@@ -437,7 +471,7 @@
                     >Book Class</a
                   >
                 </td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="yoga">
                   <span class="block text-white font-bold">Yoga</span> Coach
                   Mike
                   <a
@@ -446,7 +480,7 @@
                     >Book Class</a
                   >
                 </td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="hiit">
                   <span class="block text-white font-bold">HIIT</span> Coach
                   Sarah
                   <a
@@ -455,7 +489,7 @@
                     >Book Class</a
                   >
                 </td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="yoga">
                   <span class="block text-white font-bold">Yoga</span> Coach
                   Mike
                   <a
@@ -464,7 +498,7 @@
                     >Book Class</a
                   >
                 </td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="hiit">
                   <span class="block text-white font-bold">HIIT</span> Coach
                   Sarah
                   <a
@@ -473,7 +507,7 @@
                     >Book Class</a
                   >
                 </td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="strength">
                   <span class="block text-white font-bold">Strength</span> Coach
                   Alex
                   <a
@@ -487,7 +521,7 @@
                 class="border-b border-white/5 hover:bg-white/5 transition-colors"
               >
                 <td class="py-8 px-4 font-bold text-white">07:00 PM</td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="strength">
                   <span class="block text-white font-bold">Strength</span> Coach
                   Alex
                   <a
@@ -496,7 +530,7 @@
                     >Book Class</a
                   >
                 </td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="hiit">
                   <span class="block text-white font-bold">HIIT</span> Coach
                   Sarah
                   <a
@@ -505,7 +539,7 @@
                     >Book Class</a
                   >
                 </td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="strength">
                   <span class="block text-white font-bold">Strength</span> Coach
                   Alex
                   <a
@@ -514,7 +548,7 @@
                     >Book Class</a
                   >
                 </td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="hiit">
                   <span class="block text-white font-bold">HIIT</span> Coach
                   Sarah
                   <a
@@ -523,7 +557,7 @@
                     >Book Class</a
                   >
                 </td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="strength">
                   <span class="block text-white font-bold">Strength</span> Coach
                   Alex
                   <a
@@ -532,7 +566,7 @@
                     >Book Class</a
                   >
                 </td>
-                <td class="py-8 px-4">
+                <td class="py-8 px-4" data-type="recovery">
                   <span class="block text-white font-bold">Recovery</span> Coach
                   Mike
                   <a
@@ -653,6 +687,34 @@
           }
         });
       }
+
+      // Class Filtering Logic
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const classCells = document.querySelectorAll("tbody td[data-type]");
+
+      filterButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const filter = btn.getAttribute("data-filter");
+
+          // Update button states
+          filterButtons.forEach((b) => {
+            b.classList.remove("bg-gym-neon", "text-black");
+            b.classList.add("border", "border-white/20", "text-white");
+          });
+          btn.classList.add("bg-gym-neon", "text-black");
+          btn.classList.remove("border", "border-white/20", "text-white");
+
+          // Filter content by adjusting opacity and interaction
+          classCells.forEach((cell) => {
+            const isMatch =
+              filter === "all" || cell.getAttribute("data-type") === filter;
+            cell.style.opacity = isMatch ? "1" : "0.15";
+            cell.style.filter = isMatch ? "none" : "grayscale(1)";
+            cell.style.pointerEvents = isMatch ? "auto" : "none";
+            cell.style.transition = "all 0.4s ease";
+          });
+        });
+      });
     </script>
   </body>
 </html>
