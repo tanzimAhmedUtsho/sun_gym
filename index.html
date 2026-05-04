@@ -49,6 +49,18 @@
         opacity: 1;
         transform: translateY(0);
       }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .animate-marquee {
+        display: flex;
+        animation: marquee 25s linear infinite;
+      }
     </style>
   </head>
   <body class="bg-gym-black text-white font-sans antialiased">
@@ -131,6 +143,27 @@
         </div>
       </div>
     </section>
+
+    <!-- Moving Advertisement -->
+    <div
+      class="bg-gym-neon py-4 overflow-hidden border-y border-white/10 relative z-20"
+    >
+      <div
+        class="animate-marquee whitespace-nowrap flex text-black font-black uppercase tracking-tighter text-2xl md:text-4xl"
+      >
+        <span class="px-8">Special Offer: 20% Off for New Members •</span>
+        <span class="px-8">Join SUN_GYM Today •</span>
+        <span class="px-8">Push Your Limits •</span>
+        <span class="px-8">Elite Coaching by Tanzim Ahmed Utsho •</span>
+        <span class="px-8">Modern Equipment & Spa •</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="px-8">Special Offer: 20% Off for New Members •</span>
+        <span class="px-8">Join SUN_GYM Today •</span>
+        <span class="px-8">Push Your Limits •</span>
+        <span class="px-8">Elite Coaching by Tanzim Ahmed Utsho •</span>
+        <span class="px-8">Modern Equipment & Spa •</span>
+      </div>
+    </div>
 
     <!-- Features Grid -->
     <section id="features" class="py-24 bg-gym-black">
