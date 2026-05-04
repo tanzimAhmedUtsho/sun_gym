@@ -66,40 +66,52 @@ if (calcBtn) {
 }
 
 // Trainer Carousel Logic
-const carousel = document.getElementById('trainer-carousel');
-const nextBtn = document.getElementById('nextBtn');
-const prevBtn = document.getElementById('prevBtn');
+const carousel = document.getElementById("trainer-carousel");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
 
 if (carousel && nextBtn && prevBtn) {
-  nextBtn.addEventListener('click', () => {
+  nextBtn.addEventListener("click", () => {
     carousel.scrollLeft += 400;
   });
-  prevBtn.addEventListener('click', () => {
+  prevBtn.addEventListener("click", () => {
     carousel.scrollLeft -= 400;
   });
 }
 
 // Booking Form Submission Logic
-const bookingForm = document.getElementById('booking-form');
-const successMsg = document.getElementById('success-msg');
+const bookingForm = document.getElementById("booking-form");
+const successMsg = document.getElementById("success-msg");
 
 if (bookingForm) {
-  bookingForm.addEventListener('submit', (e) => {
+  bookingForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    
+
     const formData = {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      trainer: document.getElementById('trainer').value
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      trainer: document.getElementById("trainer").value,
     };
 
-    console.log('Form Submitted:', formData);
-    
+    console.log("Form Submitted:", formData);
+
     // Transition UI
-    bookingForm.classList.add('hidden');
-    successMsg.classList.remove('hidden');
-    
+    bookingForm.classList.add("hidden");
+    successMsg.classList.remove("hidden");
+
     // Reset Form
     bookingForm.reset();
   });
 }
+
+// Force Background Video Playback
+document.addEventListener("DOMContentLoaded", () => {
+  const bgVideo = document.querySelector("video");
+  if (bgVideo) {
+    bgVideo.play().catch(() => {
+      console.log(
+        "Autoplay was prevented. This usually happens in battery saver mode or specific browser settings.",
+      );
+    });
+  }
+});
