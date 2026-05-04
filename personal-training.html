@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Training | SUN_GYM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "gym-black": "#0a0a0a",
+              "gym-charcoal": "#1a1a1a",
+              "gym-neon": "#ccff00",
+            },
+            fontFamily: { sans: ["Inter", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glass {
+        background: rgba(10, 10, 10, 0.7);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .neon-glow {
+        box-shadow: 0 0 15px rgba(204, 255, 0, 0.4);
+      }
+      .neon-glow:hover {
+        box-shadow: 0 0 25px rgba(204, 255, 0, 0.7);
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .carousel-container {
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .carousel-container::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="bg-gym-black text-white font-sans antialiased">
+    <!-- Navbar (Inherited) -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6">
+      <div class="container mx-auto px-6 flex justify-between items-center">
+        <div class="text-2xl font-black tracking-tighter italic">
+          SUN<span class="text-gym-neon">_GYM</span>
+        </div>
+        <div
+          class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest"
+        >
+          <a href="index.html#home" class="hover:text-gym-neon transition"
+            >Home</a
+          >
+          <a href="#" class="text-gym-neon transition">Classes</a>
+          <a href="index.html#pricing" class="hover:text-gym-neon transition"
+            >Pricing</a
+          >
+          <a href="index.html#bmi" class="hover:text-gym-neon transition"
+            >BMI</a
+          >
+        </div>
+        <a
+          href="#book"
+          class="bg-gym-neon text-black px-6 py-2 rounded-full font-extrabold text-sm neon-glow transition-all"
+          >JOIN NOW</a
+        >
+      </div>
+    </nav>
+
+    <!-- Section 1: Hero -->
+    <section
+      class="relative h-[80vh] flex items-center justify-center overflow-hidden"
+    >
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=1920"
+          alt="Personal Training"
+          class="w-full h-full object-cover opacity-40 grayscale"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-transparent to-gym-black"
+        ></div>
+      </div>
+      <div class="container mx-auto px-6 relative z-10 text-center">
+        <h1 class="text-5xl md:text-7xl font-black uppercase mb-6 reveal">
+          TRANSFORM YOURSELF WITH <br /><span class="text-gym-neon"
+            >PERSONAL TRAINING</span
+          >
+        </h1>
+        <p class="text-gray-400 max-w-2xl mx-auto mb-10 text-lg reveal">
+          Dedicated guidance from expert coaches like Tanzim Ahmed Utsho to
+          accelerate your fitness journey.
+        </p>
+        <div class="reveal">
+          <a
+            href="#book"
+            class="inline-block border-2 border-gym-neon text-gym-neon hover:bg-gym-neon hover:text-black font-bold px-10 py-4 transition-all duration-300 uppercase tracking-widest"
+            >Book Your Trainer</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Core Concept -->
+    <section class="py-24 bg-gym-black">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <!-- Card 1 -->
+          <div
+            class="reveal p-8 bg-gym-charcoal rounded-2xl border border-white/5 hover:border-gym-neon/30 transition-all"
+          >
+            <div
+              class="w-12 h-12 bg-gym-neon/10 rounded-lg flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-6 h-6 text-gym-neon"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 10-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1a1 1 0 112 0v1a1 1 0 11-2 0zM13 16v-1a1 1 0 112 0v1a1 1 0 11-2 0zM6.464 14.95a1 1 0 11-1.414 1.414l-.707-.707a1 1 0 111.414-1.414l.707.707zM14.95 6.464a1 1 0 111.414-1.414l.707.707a1 1 0 11-1.414 1.414l-.707-.707z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Personal Training</h3>
+            <p class="text-gray-400">
+              Custom tailored workouts designed for your body type and fitness
+              goals.
+            </p>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="reveal p-8 bg-gym-charcoal rounded-2xl border border-white/5 hover:border-gym-neon/30 transition-all"
+          >
+            <div
+              class="w-12 h-12 bg-gym-neon/10 rounded-lg flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-6 h-6 text-gym-neon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04kM12 21.75c-3.116 0-5.943-1.185-8.082-3.134A11.917 11.917 0 0112 14.25c3.116 0 5.943 1.185 8.082 3.134A11.917 11.917 0 0112 21.75z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Expert Coaching</h3>
+            <p class="text-gray-400">
+              Learn proper technique and nutrition from the best in the
+              industry.
+            </p>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="reveal p-8 bg-gym-charcoal rounded-2xl border border-white/5 hover:border-gym-neon/30 transition-all"
+          >
+            <div
+              class="w-12 h-12 bg-gym-neon/10 rounded-lg flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-6 h-6 text-gym-neon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Fast-Track Results</h3>
+            <p class="text-gray-400">
+              Maximize every minute of your workout and see results faster than
+              ever.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Trainer Carousel -->
+    <section class="py-24 bg-gym-charcoal">
+      <div class="container mx-auto px-6">
+        <div class="flex justify-between items-end mb-12 reveal">
+          <div>
+            <h2 class="text-4xl font-black uppercase mb-2">
+              Choose Your <span class="text-gym-neon">Trainer</span>
+            </h2>
+            <p class="text-gray-400">
+              Work with elite professionals dedicated to your success.
+            </p>
+          </div>
+          <div class="flex space-x-4">
+            <button
+              id="prevBtn"
+              class="p-3 border border-white/10 rounded-full hover:border-gym-neon hover:text-gym-neon transition"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <button
+              id="nextBtn"
+              class="p-3 border border-white/10 rounded-full hover:border-gym-neon hover:text-gym-neon transition"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          id="trainer-carousel"
+          class="carousel-container flex overflow-x-auto space-x-8 pb-8"
+        >
+          <!-- Trainer 1 -->
+          <div
+            class="min-w-[300px] md:min-w-[400px] bg-gym-black rounded-3xl overflow-hidden border border-white/5 reveal"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1567013127542-490d757e51fe?auto=format&fit=crop&q=80&w=600"
+              class="w-full h-64 object-cover"
+              alt="Tanzim Ahmed Utsho"
+            />
+            <div class="p-8">
+              <span
+                class="text-gym-neon text-xs font-bold uppercase tracking-widest"
+                >Strength & Conditioning</span
+              >
+              <h4 class="text-2xl font-bold mt-2">Tanzim Ahmed Utsho</h4>
+              <p class="text-gray-400 mt-4 text-sm">
+                Founder of SUN_GYM with 10+ years of experience in athletic
+                transformation.
+              </p>
+            </div>
+          </div>
+          <!-- Trainer 2 -->
+          <div
+            class="min-w-[300px] md:min-w-[400px] bg-gym-black rounded-3xl overflow-hidden border border-white/5 reveal"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1548690312-e3b507d17a12?auto=format&fit=crop&q=80&w=600"
+              class="w-full h-64 object-cover"
+              alt="Sarah Jenkins"
+            />
+            <div class="p-8">
+              <span
+                class="text-gym-neon text-xs font-bold uppercase tracking-widest"
+                >HIIT & Weight Loss</span
+              >
+              <h4 class="text-2xl font-bold mt-2">Sarah Jenkins</h4>
+              <p class="text-gray-400 mt-4 text-sm">
+                Specializes in high-intensity functional training and nutrition
+                planning.
+              </p>
+            </div>
+          </div>
+          <!-- Trainer 3 -->
+          <div
+            class="min-w-[300px] md:min-w-[400px] bg-gym-black rounded-3xl overflow-hidden border border-white/5 reveal"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&q=80&w=600"
+              class="w-full h-64 object-cover"
+              alt="Alex Rivera"
+            />
+            <div class="p-8">
+              <span
+                class="text-gym-neon text-xs font-bold uppercase tracking-widest"
+                >Bodybuilding Expert</span
+              >
+              <h4 class="text-2xl font-bold mt-2">Alex Rivera</h4>
+              <p class="text-gray-400 mt-4 text-sm">
+                Focuses on muscle hypertrophy and competition preparation
+                coaching.
+              </p>
+            </div>
+          </div>
+          <!-- Trainer 4 -->
+          <div
+            class="min-w-[300px] md:min-w-[400px] bg-gym-black rounded-3xl overflow-hidden border border-white/5 reveal"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1611672585731-fa10603fb9e0?auto=format&fit=crop&q=80&w=600"
+              class="w-full h-64 object-cover"
+              alt="Mike Ross"
+            />
+            <div class="p-8">
+              <span
+                class="text-gym-neon text-xs font-bold uppercase tracking-widest"
+                >Yoga & Recovery</span
+              >
+              <h4 class="text-2xl font-bold mt-2">Mike Ross</h4>
+              <p class="text-gray-400 mt-4 text-sm">
+                Expert in mobility training and mental wellness for peak
+                performance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Call-to-Action -->
+    <section id="book" class="py-24 bg-gym-black">
+      <div class="container mx-auto px-6">
+        <div
+          class="max-w-3xl mx-auto bg-gym-charcoal p-10 md:p-16 rounded-[40px] reveal border border-white/5"
+        >
+          <div class="text-center mb-10">
+            <h2 class="text-4xl font-black uppercase mb-4">
+              Request a <span class="text-gym-neon">Trial Session</span>
+            </h2>
+            <p class="text-gray-400">
+              Take the first step. Our experts will get back to you shortly.
+            </p>
+          </div>
+          <form id="booking-form" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label
+                  class="text-xs font-bold uppercase tracking-widest text-gray-500 ml-1"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  required
+                  class="w-full bg-gym-black border border-white/10 p-4 rounded-xl focus:border-gym-neon outline-none transition"
+                  placeholder="John Doe"
+                />
+              </div>
+              <div class="space-y-2">
+                <label
+                  class="text-xs font-bold uppercase tracking-widest text-gray-500 ml-1"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  class="w-full bg-gym-black border border-white/10 p-4 rounded-xl focus:border-gym-neon outline-none transition"
+                  placeholder="john@example.com"
+                />
+              </div>
+            </div>
+            <div class="space-y-2">
+              <label
+                class="text-xs font-bold uppercase tracking-widest text-gray-500 ml-1"
+                >Select Trainer</label
+              >
+              <select
+                id="trainer"
+                required
+                class="w-full bg-gym-black border border-white/10 p-4 rounded-xl focus:border-gym-neon outline-none transition appearance-none"
+              >
+                <option value="" disabled selected>
+                  Choose your preference
+                </option>
+                <option value="tanzim">Tanzim Ahmed Utsho</option>
+                <option value="sarah">Sarah Jenkins</option>
+                <option value="alex">Alex Rivera</option>
+                <option value="mike">Mike Ross</option>
+              </select>
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-gym-neon text-black font-black py-5 rounded-2xl neon-glow transition-all uppercase tracking-widest text-lg"
+            >
+              Request Trial Session
+            </button>
+          </form>
+          <!-- Success Message -->
+          <div id="success-msg" class="hidden text-center py-10">
+            <div
+              class="w-20 h-20 bg-gym-neon/20 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <svg
+                class="w-10 h-10 text-gym-neon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="3"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">Thank you!</h3>
+            <p class="text-gray-400">
+              Our expert coach will contact you within 24 hours.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 bg-gym-black">
+      <div
+        class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8"
+      >
+        <div>
+          <div class="text-2xl font-black italic mb-2">
+            SUN<span class="text-gym-neon">_GYM</span>
+          </div>
+          <p class="text-gray-500 text-sm italic">
+            Developed by Tanzim Ahmed Utsho
+          </p>
+        </div>
+        <div class="flex gap-8 text-gray-400 font-bold text-sm uppercase">
+          <a href="#" class="hover:text-gym-neon transition">Instagram</a>
+          <a href="#" class="hover:text-gym-neon transition">Facebook</a>
+          <a href="#" class="hover:text-gym-neon transition">Twitter</a>
+        </div>
+        <div class="text-gray-600 text-xs">
+          &copy; 2023 SUN_GYM. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
