@@ -721,7 +721,7 @@
               Quickly calculate your health status and find out which plan fits
               your body transformation best.
             </p>
-            <div class="grid grid-cols-2 gap-4 mb-6">
+            <div class="grid grid-cols-2 gap-4 mb-4">
               <input
                 type="number"
                 id="height"
@@ -734,6 +734,23 @@
                 placeholder="Weight (kg)"
                 class="bg-gym-black border border-white/10 p-4 rounded-xl focus:border-gym-neon outline-none transition"
               />
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+              <input
+                type="number"
+                id="age"
+                placeholder="Age"
+                class="bg-gym-black border border-white/10 p-4 rounded-xl focus:border-gym-neon outline-none transition"
+              />
+              <select
+                id="gender"
+                class="bg-gym-black border border-white/10 p-4 rounded-xl focus:border-gym-neon outline-none transition text-gray-400"
+              >
+                <option value="" disabled selected>Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
             </div>
             <button
               id="calc-btn"
@@ -818,7 +835,22 @@
                   --
                 </p>
               </div>
+              <div>
+                <p
+                  class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1"
+                >
+                  Personalized Tip
+                </p>
+                <p id="bmi-tips" class="text-white text-sm italic">--</p>
+              </div>
             </div>
+            <a
+              id="bmi-view-program"
+              href="training.html"
+              class="block w-full text-center bg-gym-neon text-black font-black py-4 rounded-xl hover:bg-white transition-all uppercase tracking-widest text-xs mt-4"
+            >
+              View Recommended Program
+            </a>
           </div>
         </div>
       </div>
