@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sun_gym | Push Your Limits</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "gym-black": "#0a0a0a",
+              "gym-charcoal": "#1a1a1a",
+              "gym-neon": "#ccff00",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glass {
+        background: rgba(10, 10, 10, 0.7);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .neon-glow {
+        box-shadow: 0 0 15px rgba(204, 255, 0, 0.4);
+      }
+      .neon-glow:hover {
+        box-shadow: 0 0 25px rgba(204, 255, 0, 0.7);
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body class="bg-gym-black text-white font-sans antialiased">
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6">
+      <div class="container mx-auto px-6 flex justify-between items-center">
+        <div class="text-2xl font-black tracking-tighter italic">
+          SUN<span class="text-gym-neon">_GYM</span>
+        </div>
+        <div
+          class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest"
+        >
+          <a href="#home" class="hover:text-gym-neon transition">Home</a>
+          <a href="#features" class="hover:text-gym-neon transition">Classes</a>
+          <a href="#pricing" class="hover:text-gym-neon transition">Pricing</a>
+          <a href="#bmi" class="hover:text-gym-neon transition">BMI</a>
+        </div>
+        <a
+          href="#pricing"
+          class="bg-gym-neon text-black px-6 py-2 rounded-full font-extrabold text-sm neon-glow transition-all"
+          >JOIN NOW</a
+        >
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="relative h-screen flex items-center justify-center overflow-hidden"
+    >
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1920"
+          alt="Gym Background"
+          class="w-full h-full object-cover opacity-50"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-transparent via-gym-black/40 to-gym-black"
+        ></div>
+      </div>
+      <div class="container mx-auto px-6 relative z-10 text-center">
+        <h2
+          class="text-gym-neon font-bold tracking-[0.3em] uppercase mb-4 reveal"
+        >
+          Work hard, get results
+        </h2>
+        <h1
+          class="text-6xl md:text-9xl font-black uppercase mb-8 leading-none reveal"
+        >
+          PUSH YOUR <br /><span
+            class="text-transparent"
+            style="-webkit-text-stroke: 2px white"
+            >LIMITS</span
+          >
+        </h1>
+        <p class="text-gray-400 max-w-2xl mx-auto mb-10 text-lg reveal">
+          Join SUN_GYM today. Premium facilities, expert coaching, and a
+          community built on grit. Led by Tanzim Ahmed Utsho.
+        </p>
+        <div class="reveal">
+          <a
+            href="#features"
+            class="inline-block border-2 border-gym-neon text-gym-neon hover:bg-gym-neon hover:text-black font-bold px-10 py-4 transition-all duration-300 uppercase tracking-widest"
+            >Explore Programs</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features" class="py-24 bg-gym-black">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div
+            class="reveal p-8 bg-gym-charcoal rounded-2xl hover:translate-y-[-10px] transition-all duration-300 border border-white/5 hover:border-gym-neon/50"
+          >
+            <div
+              class="w-16 h-16 bg-gym-neon/10 rounded-full flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-8 h-8 text-gym-neon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Personal Training</h3>
+            <p class="text-gray-400">
+              Custom tailored workouts designed for your body type and fitness
+              goals.
+            </p>
+          </div>
+          <div
+            class="reveal p-8 bg-gym-charcoal rounded-2xl hover:translate-y-[-10px] transition-all duration-300 border border-white/5 hover:border-gym-neon/50"
+          >
+            <div
+              class="w-16 h-16 bg-gym-neon/10 rounded-full flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-8 h-8 text-gym-neon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04kM12 21.75c-3.116 0-5.943-1.185-8.082-3.134A11.917 11.917 0 0112 14.25c3.116 0 5.943 1.185 8.082 3.134A11.917 11.917 0 0112 21.75z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Yoga Classes</h3>
+            <p class="text-gray-400">
+              Enhance your flexibility and mental clarity with our professional
+              yoga masters.
+            </p>
+          </div>
+          <div
+            class="reveal p-8 bg-gym-charcoal rounded-2xl hover:translate-y-[-10px] transition-all duration-300 border border-white/5 hover:border-gym-neon/50"
+          >
+            <div
+              class="w-16 h-16 bg-gym-neon/10 rounded-full flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-8 h-8 text-gym-neon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Modern Equipment</h3>
+            <p class="text-gray-400">
+              State-of-the-art machinery to ensure every rep counts toward your
+              progress.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Table -->
+    <section id="pricing" class="py-24 bg-gym-charcoal">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-black mb-16 reveal">CHOOSE YOUR PLAN</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+          <div
+            class="reveal p-10 bg-gym-black rounded-3xl border border-white/10"
+          >
+            <h4 class="text-xl font-bold mb-4">BASIC</h4>
+            <div class="text-5xl font-black mb-6">
+              $25<span class="text-lg text-gray-500 font-normal">/mo</span>
+            </div>
+            <ul class="space-y-4 text-gray-400 mb-10">
+              <li>Standard Gym Access</li>
+              <li>Locker Room access</li>
+              <li>Free Water</li>
+            </ul>
+            <button
+              class="w-full py-4 border border-white/20 hover:border-gym-neon hover:text-gym-neon transition rounded-xl font-bold"
+            >
+              GET STARTED
+            </button>
+          </div>
+          <div
+            class="reveal p-12 bg-gym-neon text-black rounded-3xl scale-105 shadow-2xl relative z-10"
+          >
+            <span
+              class="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-white text-black text-xs font-black px-4 py-1 rounded-full"
+              >POPULAR</span
+            >
+            <h4 class="text-xl font-bold mb-4">PRO</h4>
+            <div class="text-5xl font-black mb-6">
+              $50<span class="text-lg font-normal">/mo</span>
+            </div>
+            <ul class="space-y-4 font-semibold mb-10">
+              <li>24/7 Premium Access</li>
+              <li>All Group Classes</li>
+              <li>1 PT Session / Month</li>
+              <li>Protein Bar Access</li>
+            </ul>
+            <button
+              class="w-full py-4 bg-black text-white rounded-xl font-bold hover:opacity-90 transition"
+            >
+              GET STARTED
+            </button>
+          </div>
+          <div
+            class="reveal p-10 bg-gym-black rounded-3xl border border-white/10"
+          >
+            <h4 class="text-xl font-bold mb-4">ULTIMATE</h4>
+            <div class="text-5xl font-black mb-6">
+              $80<span class="text-lg text-gray-500 font-normal">/mo</span>
+            </div>
+            <ul class="space-y-4 text-gray-400 mb-10">
+              <li>All Pro Features</li>
+              <li>Unlimited PT Sessions</li>
+              <li>Sauna & Spa access</li>
+              <li>Guest Passes</li>
+            </ul>
+            <button
+              class="w-full py-4 border border-white/20 hover:border-gym-neon hover:text-gym-neon transition rounded-xl font-bold"
+            >
+              GET STARTED
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BMI Calculator -->
+    <section id="bmi" class="py-24 bg-gym-black">
+      <div class="container mx-auto px-6">
+        <div
+          class="max-w-4xl mx-auto bg-gym-charcoal p-12 rounded-3xl reveal flex flex-col md:flex-row gap-12 items-center"
+        >
+          <div class="flex-1">
+            <h2 class="text-4xl font-black mb-6 uppercase leading-tight">
+              Check your <span class="text-gym-neon">Body Mass Index</span>
+            </h2>
+            <p class="text-gray-400 mb-8">
+              Quickly calculate your health status and find out which plan fits
+              your body transformation best.
+            </p>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+              <input
+                type="number"
+                id="height"
+                placeholder="Height (cm)"
+                class="bg-gym-black border border-white/10 p-4 rounded-xl focus:border-gym-neon outline-none transition"
+              />
+              <input
+                type="number"
+                id="weight"
+                placeholder="Weight (kg)"
+                class="bg-gym-black border border-white/10 p-4 rounded-xl focus:border-gym-neon outline-none transition"
+              />
+            </div>
+            <button
+              id="calc-btn"
+              class="w-full bg-gym-neon text-black font-black py-4 rounded-xl neon-glow transition-all uppercase tracking-widest"
+            >
+              Calculate BMI
+            </button>
+          </div>
+          <div
+            id="bmi-result-card"
+            class="flex-1 bg-gym-black p-8 rounded-2xl border border-gym-neon/20 hidden"
+          >
+            <p class="text-sm font-bold text-gray-500 uppercase mb-2">
+              Your Result
+            </p>
+            <div id="bmi-val" class="text-6xl font-black text-gym-neon mb-2">
+              --
+            </div>
+            <div
+              id="bmi-status"
+              class="text-xl font-bold uppercase tracking-widest"
+            >
+              --
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 bg-gym-black">
+      <div
+        class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8"
+      >
+        <div>
+          <div class="text-2xl font-black italic mb-2">
+            SUN<span class="text-gym-neon">_GYM</span>
+          </div>
+          <p class="text-gray-500 text-sm italic">
+            Developed by Tanzim Ahmed Utsho
+          </p>
+        </div>
+        <div class="flex gap-8 text-gray-400 font-bold text-sm uppercase">
+          <a href="#" class="hover:text-gym-neon transition">Instagram</a>
+          <a href="#" class="hover:text-gym-neon transition">Facebook</a>
+          <a href="#" class="hover:text-gym-neon transition">Twitter</a>
+        </div>
+        <div class="text-gray-600 text-xs">
+          &copy; 2023 SUN_GYM. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
