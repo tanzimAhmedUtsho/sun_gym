@@ -61,6 +61,7 @@ if (calcBtn) {
   const bmiStatusDisplay = document.getElementById("bmi-status");
   const weightRangeDisplay = document.getElementById("weight-range");
   const bmiPlanDisplay = document.getElementById("bmi-plan");
+  const bmiIndicator = document.getElementById("bmi-indicator");
 
   calcBtn.addEventListener("click", () => {
     const h = parseFloat(document.getElementById("height").value);
@@ -91,6 +92,13 @@ if (calcBtn) {
 
       bmiStatusDisplay.innerText = status;
       bmiPlanDisplay.innerText = plan;
+
+      if (bmiIndicator) {
+        // Map BMI 15-35 to 0-100% for the visual scale
+        let percent = ((parseFloat(bmi) - 15) / (35 - 15)) * 100;
+        percent = Math.max(0, Math.min(100, percent));
+        bmiIndicator.style.left = `calc(${percent}% - 8px)`;
+      }
 
       const minWeight = (18.5 * hM * hM).toFixed(1);
       const maxWeight = (24.9 * hM * hM).toFixed(1);
