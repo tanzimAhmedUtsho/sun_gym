@@ -12,6 +12,28 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// Active Link Highlighter (ScrollSpy)
+const navLinks = document.querySelectorAll(".nav-link");
+const sections = document.querySelectorAll("section");
+
+const scrollSpyObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        navLinks.forEach((link) => {
+          link.classList.remove("text-gym-neon");
+          if (link.getAttribute("href") === `#${entry.target.id}`) {
+            link.classList.add("text-gym-neon");
+          }
+        });
+      }
+    });
+  },
+  { threshold: 0.3 },
+);
+
+sections.forEach((section) => scrollSpyObserver.observe(section));
+
 // Reveal on Scroll Logic (Intersection Observer)
 const revealElements = document.querySelectorAll(".reveal");
 const revealObserver = new IntersectionObserver(

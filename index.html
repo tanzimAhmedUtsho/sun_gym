@@ -61,11 +61,24 @@
         <div
           class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest"
         >
-          <a href="#home" class="hover:text-gym-neon transition">Home</a>
-          <a href="#features" class="hover:text-gym-neon transition">Classes</a>
-          <a href="#pricing" class="hover:text-gym-neon transition">Pricing</a>
-          <a href="#team" class="hover:text-gym-neon transition">Team</a>
-          <a href="#bmi" class="hover:text-gym-neon transition">BMI</a>
+          <a href="#home" class="nav-link hover:text-gym-neon transition"
+            >Home</a
+          >
+          <a href="#features" class="nav-link hover:text-gym-neon transition"
+            >Classes</a
+          >
+          <a
+            href="personal-training.html"
+            class="nav-link hover:text-gym-neon transition"
+            >Personal Training</a
+          >
+          <a href="#pricing" class="nav-link hover:text-gym-neon transition"
+            >Pricing</a
+          >
+          <a href="#team" class="nav-link hover:text-gym-neon transition"
+            >Team</a
+          >
+          <a href="#bmi" class="nav-link hover:text-gym-neon transition">BMI</a>
         </div>
         <a
           href="#pricing"
@@ -123,13 +136,9 @@
     <section id="features" class="py-24 bg-gym-black">
       <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <div
-            class="reveal p-8 bg-gym-charcoal rounded-2xl hover:translate-y-[-10px] transition-all duration-300 border border-white/5 hover:border-gym-neon/50 block group cursor-pointer"
-            onclick="
-              document
-                .getElementById('book')
-                .scrollIntoView({ behavior: 'smooth' })
-            "
+          <a
+            href="personal-training.html"
+            class="reveal p-8 bg-gym-charcoal rounded-2xl hover:translate-y-[-10px] transition-all duration-300 border border-white/5 hover:border-gym-neon/50 block group"
           >
             <div
               class="w-16 h-16 bg-gym-neon/10 rounded-full flex items-center justify-center mb-6"
@@ -157,7 +166,7 @@
               Custom tailored workouts designed for your body type and fitness
               goals.
             </p>
-          </div>
+          </a>
           <div
             class="reveal p-8 bg-gym-charcoal rounded-2xl hover:translate-y-[-10px] transition-all duration-300 border border-white/5 hover:border-gym-neon/50"
           >
