@@ -35,36 +35,67 @@
   position: relative;
 }
 
+.input-icon {
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
 .floating-input {
   width: 100%;
-  background: var(--gym-black);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  border-radius: 0.75rem;
+  padding: 1.25rem 1.25rem 1.25rem 3.5rem;
+  border-radius: 1.25rem;
   color: white;
   outline: none;
-  transition: border-color 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .floating-input:focus {
+  background: rgba(255, 255, 255, 0.07);
   border-color: var(--gym-neon);
+  box-shadow: 0 0 25px rgba(204, 255, 0, 0.15);
+}
+
+.floating-input:focus ~ .input-icon,
+.floating-input:not(:placeholder-shown) ~ .input-icon {
+  color: var(--gym-neon);
 }
 
 .floating-label {
   position: absolute;
-  left: 1rem;
-  top: 1rem;
+  left: 3.5rem;
+  top: 50%;
+  transform: translateY(-50%);
   pointer-events: none;
-  transition: all 0.3s ease;
-  color: #6b7280;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  color: #9ca3af;
+  font-size: 1rem;
 }
 
 .floating-input:focus ~ .floating-label,
 .floating-input:not(:placeholder-shown) ~ .floating-label {
-  transform: translateY(-1.5rem) scale(0.85);
+  transform: translateY(-2.6rem) scale(0.75);
   color: var(--gym-neon);
-  background: var(--gym-black);
-  padding: 0 0.25rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  left: 0.5rem;
+}
+
+select.floating-input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.25rem center;
+  background-size: 1.25rem;
+  padding-right: 3.5rem;
 }
 
 /* Reveal Animations */
