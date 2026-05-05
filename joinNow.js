@@ -68,6 +68,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const joinForm = document.getElementById("join-form");
   const submitBtn = document.getElementById("submit-btn");
   const successPopup = document.getElementById("success-popup");
+  const paymentModal = document.getElementById("payment-modal");
+  const paymentForm = document.getElementById("payment-form");
+  const payNowBtn = document.getElementById("pay-now-btn");
+  const closePayment = document.getElementById("close-payment");
 
   joinForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -96,16 +100,54 @@ document.addEventListener("DOMContentLoaded", () => {
     submitBtn.classList.add("btn-loading");
     submitBtn.disabled = true;
 
-    // Simulate API Call
+    // Transition to Payment
     setTimeout(() => {
       submitBtn.classList.remove("btn-loading");
-      successPopup.classList.remove("hidden");
-      joinForm.reset();
+      submitBtn.disabled = false;
 
-      // Log form data
-      const formData = new FormData(joinForm);
-      console.log("Registration Successful:", Object.fromEntries(formData));
-    }, 2000);
+      // Populate Payment Details
+      const selectedPlan = document.getElementById("plan").value;
+      const summaryPlan = document.getElementById("summary-plan");
+      const summaryPrice = document.getElementById("summary-price");
+
+      // Find price from the cards based on toggle state
+      const priceCard = Array.from(
+        document.querySelectorAll(".glass-card, .bg-gym-neon"),
+      ).find(
+        (card) =>
+          card.querySelector("h3").innerText.toLowerCase() === selectedPlan,
+      );
+
+      if (priceCard) {
+        const price = priceCard.querySelector(".price-val").innerText;
+        const duration = isYearly ? "/yr" : "/mo";
+        summaryPlan.innerText = selectedPlan.toUpperCase();
+        summaryPrice.innerText = price + duration;
+      }
+
+      paymentModal.classList.remove("hidden");
+    }, 1500);
+  });
+
+  paymentForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    payNowBtn.classList.add("btn-loading");
+    payNowBtn.disabled = true;
+
+    // Simulate Payment Processing
+    setTimeout(() => {
+      payNowBtn.classList.remove("btn-loading");
+      payNowBtn.disabled = false;
+      paymentModal.classList.add("hidden");
+      successPopup.classList.remove("hidden");
+
+      joinForm.reset();
+      paymentForm.reset();
+    }, 2500);
+  });
+
+  closePayment.addEventListener("click", () => {
+    paymentModal.classList.add("hidden");
   });
 
   function validateEmail(email) {
@@ -117,6 +159,16 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
+
+      // Auto-select plan in form when clicking from pricing cards
+      if (this.getAttribute("href") === "#register") {
+        const card =
+          this.closest(".glass-card") || this.closest(".bg-gym-neon");
+        const planName = card.querySelector("h3").innerText.toLowerCase();
+        const planDropdown = document.getElementById("plan");
+        if (planDropdown) planDropdown.value = planName;
+      }
+
       document
         .querySelector(this.getAttribute("href"))
         .scrollIntoView({ behavior: "smooth" });
