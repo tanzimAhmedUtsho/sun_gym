@@ -668,20 +668,26 @@
             >
             <div class="relative">
               <input
+                id="card-number"
                 type="text"
                 placeholder="xxxx xxxx xxxx xxxx"
                 class="w-full bg-gym-black border border-white/10 p-4 rounded-xl focus:border-gym-neon outline-none transition text-white"
                 maxlength="19"
               />
-              <div class="absolute right-4 top-1/2 -translate-y-1/2 flex gap-2">
+              <div
+                class="absolute right-4 top-1/2 -translate-y-1/2 flex gap-2"
+                id="card-icons"
+              >
                 <img
+                  id="visa-icon"
                   src="https://img.icons8.com/color/48/000000/visa.png"
-                  class="h-6"
+                  class="h-6 grayscale opacity-30 transition-all duration-300"
                   alt="Visa"
                 />
                 <img
+                  id="mastercard-icon"
                   src="https://img.icons8.com/color/48/000000/mastercard.png"
-                  class="h-6"
+                  class="h-6 grayscale opacity-30 transition-all duration-300"
                   alt="Mastercard"
                 />
               </div>
@@ -694,6 +700,7 @@
                 >Expiry Date</label
               >
               <input
+                id="card-expiry"
                 type="text"
                 placeholder="MM/YY"
                 class="w-full bg-gym-black border border-white/10 p-4 rounded-xl focus:border-gym-neon outline-none transition text-white"
@@ -706,6 +713,7 @@
                 >CVC</label
               >
               <input
+                id="card-cvc"
                 type="text"
                 placeholder="***"
                 class="w-full bg-gym-black border border-white/10 p-4 rounded-xl focus:border-gym-neon outline-none transition text-white"

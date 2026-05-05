@@ -111,15 +111,19 @@ document.addEventListener("DOMContentLoaded", () => {
       const summaryPrice = document.getElementById("summary-price");
 
       // Find price from the cards based on toggle state
-      const priceCard = Array.from(
-        document.querySelectorAll(".glass-card, .bg-gym-neon"),
-      ).find(
-        (card) =>
-          card.querySelector("h3").innerText.toLowerCase() === selectedPlan,
-      );
+      const allCards = document.querySelectorAll(".glass-card, .bg-gym-neon");
+      const priceCard = Array.from(allCards).find((card) => {
+        const h3 = card.querySelector("h3");
+        return (
+          h3 &&
+          h3.innerText.toLowerCase().trim() ===
+            selectedPlan.toLowerCase().trim()
+        );
+      });
 
-      if (priceCard) {
-        const price = priceCard.querySelector(".price-val").innerText;
+      if (priceCard && summaryPlan && summaryPrice) {
+        const priceValElement = priceCard.querySelector(".price-val");
+        const price = priceValElement ? priceValElement.innerText : "";
         const duration = isYearly ? "/yr" : "/mo";
         summaryPlan.innerText = selectedPlan.toUpperCase();
         summaryPrice.innerText = price + duration;
@@ -129,8 +133,52 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1500);
   });
 
+  // Payment Input Masking & Validation Logic
+  const cardNumberInput = document.getElementById("card-number");
+  const cardExpiryInput = document.getElementById("card-expiry");
+  const cardCvcInput = document.getElementById("card-cvc");
+  const visaIcon = document.getElementById("visa-icon");
+  const mastercardIcon = document.getElementById("mastercard-icon");
+
+  cardNumberInput?.addEventListener("input", (e) => {
+    let value = e.target.value.replace(/\D/g, "");
+    // Detect card type (Visa starts with 4, Mastercard with 5)
+    if (value.startsWith("4")) {
+      visaIcon?.classList.remove("grayscale", "opacity-30");
+      mastercardIcon?.classList.add("grayscale", "opacity-30");
+    } else if (value.startsWith("5")) {
+      mastercardIcon?.classList.remove("grayscale", "opacity-30");
+      visaIcon?.classList.add("grayscale", "opacity-30");
+    } else {
+      visaIcon?.classList.add("grayscale", "opacity-30");
+      mastercardIcon?.classList.add("grayscale", "opacity-30");
+    }
+    e.target.value = value.replace(/(\d{4})(?=\d)/g, "$1 ").trim();
+  });
+
+  cardExpiryInput?.addEventListener("input", (e) => {
+    let value = e.target.value.replace(/\D/g, "");
+    if (value.length >= 2) {
+      e.target.value = value.substring(0, 2) + "/" + value.substring(2, 4);
+    } else {
+      e.target.value = value;
+    }
+  });
+
+  cardCvcInput?.addEventListener("input", (e) => {
+    e.target.value = e.target.value.replace(/\D/g, "");
+  });
+
   paymentForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    if (
+      cardNumberInput.value.length < 19 ||
+      cardExpiryInput.value.length < 5 ||
+      cardCvcInput.value.length < 3
+    ) {
+      alert("Please enter valid payment details.");
+      return;
+    }
     payNowBtn.classList.add("btn-loading");
     payNowBtn.disabled = true;
 
@@ -164,7 +212,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (this.getAttribute("href") === "#register") {
         const card =
           this.closest(".glass-card") || this.closest(".bg-gym-neon");
-        const planName = card.querySelector("h3").innerText.toLowerCase();
+        const h3 = card?.querySelector("h3");
+        const planName = h3 ? h3.innerText.toLowerCase() : "";
         const planDropdown = document.getElementById("plan");
         if (planDropdown) planDropdown.value = planName;
       }
