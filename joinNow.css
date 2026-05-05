@@ -103,6 +103,28 @@ select.floating-input {
   color: white;
 }
 
+/* Mobile Responsiveness for Payment Modal and Forms */
+@media (max-width: 640px) {
+  #payment-modal .glass-card {
+    padding: 1.5rem;
+    border-radius: 2rem;
+    width: 95%;
+    margin: 1rem;
+  }
+
+  #summary-price {
+    font-size: 2.25rem; /* text-4xl equivalent to slightly smaller for mobile */
+  }
+
+  .floating-input {
+    padding: 1rem 1rem 1rem 3rem;
+  }
+
+  .floating-label {
+    left: 3rem;
+  }
+}
+
 /* Reveal Animations */
 .reveal {
   opacity: 0;
