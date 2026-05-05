@@ -98,6 +98,11 @@ select.floating-input {
   padding-right: 3.5rem;
 }
 
+.floating-input option {
+  background-color: var(--gym-charcoal);
+  color: white;
+}
+
 /* Reveal Animations */
 .reveal {
   opacity: 0;
