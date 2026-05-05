@@ -72,6 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const paymentForm = document.getElementById("payment-form");
   const payNowBtn = document.getElementById("pay-now-btn");
   const closePayment = document.getElementById("close-payment");
+  const downloadReceiptBtn = document.getElementById("download-receipt-btn");
+
+  let lastTransaction = null;
 
   joinForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -182,6 +185,16 @@ document.addEventListener("DOMContentLoaded", () => {
     payNowBtn.classList.add("btn-loading");
     payNowBtn.disabled = true;
 
+    // Capture data for receipt before reset
+    lastTransaction = {
+      name: document.getElementById("fullname").value,
+      email: document.getElementById("email").value,
+      plan: document.getElementById("plan").value.toUpperCase(),
+      price: document.getElementById("summary-price").innerText,
+      date: new Date().toLocaleDateString(),
+      txId: "SG-" + Math.random().toString(36).substr(2, 9).toUpperCase(),
+    };
+
     // Simulate Payment Processing
     setTimeout(() => {
       payNowBtn.classList.remove("btn-loading");
@@ -192,6 +205,67 @@ document.addEventListener("DOMContentLoaded", () => {
       joinForm.reset();
       paymentForm.reset();
     }, 2500);
+  });
+
+  downloadReceiptBtn?.addEventListener("click", () => {
+    if (!lastTransaction) return;
+
+    const receiptHtml = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <style>
+          body { background: #0a0a0a; color: white; font-family: 'Inter', sans-serif; padding: 40px; display: flex; justify-content: center; }
+          .receipt { border: 1px solid #222; padding: 40px; border-radius: 24px; width: 400px; background: #111; position: relative; overflow: hidden; }
+          .neon-line { height: 4px; background: #ccff00; width: 100%; position: absolute; top: 0; left: 0; }
+          .logo { font-size: 24px; font-weight: 900; font-style: italic; margin-bottom: 30px; }
+          .neon { color: #ccff00; }
+          .label { color: #666; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px; }
+          .value { font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+          .price { font-size: 32px; font-weight: 900; color: #ccff00; margin: 20px 0; }
+          .status { display: inline-block; background: #ccff00; color: black; padding: 4px 12px; border-radius: 99px; font-size: 10px; font-weight: 900; }
+          .footer { margin-top: 40px; border-top: 1px solid #222; pt: 20px; font-size: 12px; color: #444; text-align: center; }
+        </style>
+      </head>
+      <body>
+        <div class="receipt">
+          <div class="neon-line"></div>
+          <div class="logo">SUN<span class="neon">_GYM</span></div>
+          
+          <div class="label">Transaction ID</div>
+          <div class="value">${lastTransaction.txId}</div>
+          
+          <div class="label">Member Name</div>
+          <div class="value">${lastTransaction.name}</div>
+          
+          <div class="label">Selected Plan</div>
+          <div class="value">${lastTransaction.plan} MEMBERSHIP</div>
+          
+          <div class="label">Date</div>
+          <div class="value">${lastTransaction.date}</div>
+          
+          <div class="price">${lastTransaction.price}</div>
+          <div class="status">PAID</div>
+          
+          <div class="footer">
+            <p>PUSH YOUR LIMITS</p>
+            <p>© 2023 SUN_GYM GLOBAL</p>
+          </div>
+        </div>
+        <script>window.print();</script>
+      </body>
+      </html>
+    `;
+
+    const blob = new Blob([receiptHtml], { type: "text/html" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `SUN_GYM_Receipt_${lastTransaction.txId}.html`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   });
 
   closePayment.addEventListener("click", () => {
