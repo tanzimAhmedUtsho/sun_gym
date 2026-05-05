@@ -103,6 +103,11 @@ select.floating-input {
   color: white;
 }
 
+.back-home-btn:hover {
+  box-shadow: 0 0 20px rgba(204, 255, 0, 0.1);
+  background: rgba(204, 255, 0, 0.05);
+}
+
 /* Mobile Responsiveness for Payment Modal and Forms */
 @media (max-width: 640px) {
   #payment-modal .glass-card {
