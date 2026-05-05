@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join SUN_GYM | Push Your Limits</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="joinNow.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "gym-black": "#0a0a0a",
+              "gym-charcoal": "#1a1a1a",
+              "gym-neon": "#ccff00",
+            },
+            fontFamily: { sans: ["Inter", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gym-black text-white font-sans antialiased overflow-x-hidden">
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="text-3xl font-black italic animate-pulse">
+        SUN<span class="text-gym-neon">_GYM</span>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav
+      class="fixed w-full z-50 bg-gym-black/80 backdrop-blur-lg border-b border-white/5 py-4"
+    >
+      <div class="container mx-auto px-6 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-black italic"
+          >SUN<span class="text-gym-neon">_GYM</span></a
+        >
+        <a
+          href="index.html"
+          class="text-sm font-bold uppercase tracking-widest hover:text-gym-neon transition"
+          >Back to Home</a
+        >
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20"
+    >
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&q=80&w=1920"
+          class="w-full h-full object-cover opacity-30 grayscale"
+          alt="Gym"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-gym-black/20 via-gym-black to-gym-black"
+        ></div>
+      </div>
+      <div class="container mx-auto px-6 relative z-10 text-center reveal">
+        <h1
+          class="text-5xl md:text-7xl font-black uppercase mb-6 leading-tight"
+        >
+          Start Your <br /><span class="text-gym-neon">Fitness Journey</span>
+          Today
+        </h1>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+          Join SUN_GYM and transform your body and mindset with our premium
+          facilities and world-class coaching.
+        </p>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-20 bg-gym-black">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col items-center mb-16 reveal">
+          <h2 class="text-3xl font-black uppercase mb-8">Select Your Plan</h2>
+          <div
+            class="flex items-center gap-4 bg-gym-charcoal p-1 rounded-full border border-white/10"
+          >
+            <span class="ml-4 text-sm font-bold text-gray-400">Monthly</span>
+            <button
+              id="price-toggle"
+              class="relative w-14 h-8 bg-gym-neon rounded-full transition-all"
+            >
+              <div
+                id="toggle-circle"
+                class="absolute top-1 left-1 w-6 h-6 bg-black rounded-full transition-all"
+              ></div>
+            </button>
+            <span class="mr-4 text-sm font-bold text-gray-400"
+              >Yearly <span class="text-gym-neon text-xs">(-20%)</span></span
+            >
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Basic -->
+          <div
+            class="glass-card p-10 rounded-[32px] neon-border-glow transition-all reveal"
+          >
+            <h3 class="text-xl font-bold mb-2">BASIC</h3>
+            <div class="mb-6">
+              <span
+                class="text-5xl font-black price-val"
+                data-monthly="25"
+                data-yearly="240"
+                >$25</span
+              >
+              <span class="text-gray-500 duration-text">/mo</span>
+            </div>
+            <ul class="space-y-4 text-gray-400 mb-10">
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5 text-gym-neon"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Standard Gym Access
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5 text-gym-neon"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Locker Room Access
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5 text-gym-neon"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Free Water & Towels
+              </li>
+            </ul>
+            <a
+              href="#register"
+              class="block text-center py-4 border border-white/20 rounded-xl font-bold hover:bg-white hover:text-black transition"
+              >CHOOSE PLAN</a
+            >
+          </div>
+
+          <!-- Pro -->
+          <div
+            class="bg-gym-neon p-10 rounded-[32px] scale-105 shadow-[0_0_40px_rgba(204,255,0,0.2)] text-black relative reveal"
+          >
+            <div
+              class="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-black text-[10px] font-black px-4 py-1 rounded-full uppercase"
+            >
+              Most Popular
+            </div>
+            <h3 class="text-xl font-bold mb-2">PRO</h3>
+            <div class="mb-6">
+              <span
+                class="text-5xl font-black price-val"
+                data-monthly="50"
+                data-yearly="480"
+                >$50</span
+              >
+              <span class="duration-text">/mo</span>
+            </div>
+            <ul class="space-y-4 font-semibold mb-10">
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                24/7 Premium Access
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                All Group Classes
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                2 PT Sessions / Mo
+              </li>
+            </ul>
+            <a
+              href="#register"
+              class="block text-center py-4 bg-black text-white rounded-xl font-bold hover:opacity-90 transition"
+              >CHOOSE PLAN</a
+            >
+          </div>
+
+          <!-- Elite -->
+          <div
+            class="glass-card p-10 rounded-[32px] neon-border-glow transition-all reveal"
+          >
+            <h3 class="text-xl font-bold mb-2">ELITE</h3>
+            <div class="mb-6">
+              <span
+                class="text-5xl font-black price-val"
+                data-monthly="80"
+                data-yearly="770"
+                >$80</span
+              >
+              <span class="text-gray-500 duration-text">/mo</span>
+            </div>
+            <ul class="space-y-4 text-gray-400 mb-10">
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5 text-gym-neon"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Unlimited PT Sessions
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5 text-gym-neon"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Full Spa & Sauna Access
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5 text-gym-neon"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Nutrition Consulting
+              </li>
+            </ul>
+            <a
+              href="#register"
+              class="block text-center py-4 border border-white/20 rounded-xl font-bold hover:bg-white hover:text-black transition"
+              >CHOOSE PLAN</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-gym-charcoal/30">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="text-center reveal">
+            <div
+              class="w-16 h-16 bg-gym-neon/10 rounded-2xl flex items-center justify-center mx-auto mb-6"
+            >
+              <svg
+                class="w-8 h-8 text-gym-neon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+            </div>
+            <h4 class="font-bold mb-2">Expert Trainers</h4>
+            <p class="text-gray-500 text-sm">
+              Elite coaching from professionals.
+            </p>
+          </div>
+          <div class="text-center reveal">
+            <div
+              class="w-16 h-16 bg-gym-neon/10 rounded-2xl flex items-center justify-center mx-auto mb-6"
+            >
+              <svg
+                class="w-8 h-8 text-gym-neon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <h4 class="font-bold mb-2">Modern Equipment</h4>
+            <p class="text-gray-500 text-sm">State-of-the-art tech machines.</p>
+          </div>
+          <div class="text-center reveal">
+            <div
+              class="w-16 h-16 bg-gym-neon/10 rounded-2xl flex items-center justify-center mx-auto mb-6"
+            >
+              <svg
+                class="w-8 h-8 text-gym-neon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h4 class="font-bold mb-2">24/7 Access</h4>
+            <p class="text-gray-500 text-sm">Train whenever you want.</p>
+          </div>
+          <div class="text-center reveal">
+            <div
+              class="w-16 h-16 bg-gym-neon/10 rounded-2xl flex items-center justify-center mx-auto mb-6"
+            >
+              <svg
+                class="w-8 h-8 text-gym-neon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h4 class="font-bold mb-2">Support Community</h4>
+            <p class="text-gray-500 text-sm">A brotherhood built on grit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section id="register" class="py-24 bg-gym-black relative">
+      <div class="container mx-auto px-6">
+        <div class="max-w-xl mx-auto glass-card p-12 rounded-[40px] reveal">
+          <div class="text-center mb-10">
+            <h2 class="text-3xl font-black uppercase mb-2">
+              Create Your Account
+            </h2>
+            <p class="text-gray-500">
+              Fill in the details to start your membership.
+            </p>
+          </div>
+          <form id="join-form" class="space-y-6">
+            <div class="form-group">
+              <input
+                type="text"
+                id="fullname"
+                class="floating-input"
+                placeholder=" "
+                required
+              />
+              <label class="floating-label">Full Name</label>
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                id="email"
+                class="floating-input"
+                placeholder=" "
+                required
+              />
+              <label class="floating-label">Email Address</label>
+            </div>
+            <div class="form-group">
+              <input
+                type="tel"
+                id="phone"
+                class="floating-input"
+                placeholder=" "
+                required
+              />
+              <label class="floating-label">Phone Number</label>
+            </div>
+            <div class="form-group">
+              <select
+                id="plan"
+                class="floating-input bg-gym-black appearance-none"
+                required
+              >
+                <option value="" disabled selected></option>
+                <option value="basic">Basic Plan</option>
+                <option value="pro">Pro Plan</option>
+                <option value="elite">Elite Plan</option>
+              </select>
+              <label class="floating-label">Select Plan</label>
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                id="password"
+                class="floating-input"
+                placeholder=" "
+                required
+              />
+              <label class="floating-label">Password</label>
+            </div>
+            <button
+              type="submit"
+              id="submit-btn"
+              class="w-full bg-gym-neon text-black font-black py-5 rounded-2xl hover:shadow-[0_0_30px_rgba(204,255,0,0.4)] transition-all uppercase tracking-widest text-lg"
+            >
+              Complete Registration
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Slider -->
+    <section class="py-24 bg-gym-charcoal">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-black uppercase mb-16 reveal">
+          Member Success Stories
+        </h2>
+        <div class="max-w-4xl mx-auto relative overflow-hidden">
+          <div
+            id="testimonial-slider"
+            class="flex transition-transform duration-500"
+          >
+            <!-- Slide 1 -->
+            <div class="min-w-full px-4">
+              <div
+                class="glass-card p-10 rounded-[32px] italic text-lg text-gray-300"
+              >
+                "SUN_GYM transformed my life. In 6 months, I've lost 15kg and
+                gained strength I never thought possible. Best equipment in
+                town!"
+                <div
+                  class="mt-6 text-gym-neon font-black not-italic uppercase text-sm"
+                >
+                  - James Anderson
+                </div>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="min-w-full px-4">
+              <div
+                class="glass-card p-10 rounded-[32px] italic text-lg text-gray-300"
+              >
+                "The elite coaching here is unmatched. Tanzim and the team
+                really push you to your absolute limits. Joining was the best
+                decision."
+                <div
+                  class="mt-6 text-gym-neon font-black not-italic uppercase text-sm"
+                >
+                  - Michael Chen
+                </div>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="min-w-full px-4">
+              <div
+                class="glass-card p-10 rounded-[32px] italic text-lg text-gray-300"
+              >
+                "I love the vibe! It's not just a gym; it's a community. The spa
+                facilities are amazing for recovery after heavy sessions."
+                <div
+                  class="mt-6 text-gym-neon font-black not-italic uppercase text-sm"
+                >
+                  - Sarah Williams
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center gap-4 mt-10">
+            <button
+              id="prev-test"
+              class="p-3 border border-white/10 rounded-full hover:border-gym-neon transition"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              id="next-test"
+              class="p-3 border border-white/10 rounded-full hover:border-gym-neon transition"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gym-black">
+      <div class="container mx-auto px-6 text-center reveal">
+        <div class="bg-gym-neon p-20 rounded-[40px] text-black">
+          <h2 class="text-5xl font-black uppercase mb-8">
+            Ready to Push Your Limits?
+          </h2>
+          <a
+            href="#register"
+            class="inline-block bg-black text-white px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-xl animate-pulse hover:scale-110 transition"
+            >JOIN NOW</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 bg-gym-black">
+      <div
+        class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8"
+      >
+        <div>
+          <a href="#" class="text-2xl font-black italic mb-2 block"
+            >SUN<span class="text-gym-neon">_GYM</span></a
+          >
+          <p class="text-gray-500 text-sm italic">
+            Developed by Tanzim Ahmed Utsho
+          </p>
+        </div>
+        <div class="flex gap-8 text-gray-400 font-bold text-sm uppercase">
+          <a href="#" class="hover:text-gym-neon transition">Instagram</a>
+          <a href="#" class="hover:text-gym-neon transition">Facebook</a>
+          <a href="#" class="hover:text-gym-neon transition">Twitter</a>
+        </div>
+        <div class="text-gray-600 text-xs">
+          &copy; 2023 SUN_GYM. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Success Popup -->
+    <div
+      id="success-popup"
+      class="fixed inset-0 z-[100] flex items-center justify-center hidden bg-black/80 backdrop-blur-md"
+    >
+      <div
+        class="glass-card p-12 rounded-[40px] max-w-sm w-full text-center border-gym-neon/20 animate-bounce"
+      >
+        <div
+          class="w-20 h-20 bg-gym-neon rounded-full flex items-center justify-center mx-auto mb-6"
+        >
+          <svg
+            class="w-10 h-10 text-black"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="4"
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-black mb-4 uppercase">
+          Welcome to the Brotherhood!
+        </h3>
+        <p class="text-gray-400 mb-8">
+          Registration successful. We'll contact you shortly.
+        </p>
+        <button
+          onclick="window.location.href = 'index.html'"
+          class="w-full bg-gym-neon text-black font-black py-4 rounded-xl uppercase tracking-widest"
+        >
+          Done
+        </button>
+      </div>
+    </div>
+
+    <script src="joinNow.js"></script>
+  </body>
+</html>
